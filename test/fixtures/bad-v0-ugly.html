@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Broken demo v0</title>
+  <style>
+    body { margin: 0; font-family: system-ui, sans-serif; }
+    main { width: 1200px; padding: 24px; }
+    .card { width: 220px; height: 42px; overflow: hidden; border: 1px solid #ccc; }
+    .stack { position: relative; height: 80px; }
+    .stack button { position: absolute; left: 0; top: 0; width: 120px; height: 44px; }
+    .stack a { position: absolute; left: 20px; top: 10px; width: 120px; height: 44px; background: #ddd; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Broken demo</h1>
+    <div class="card">This generated product headline is far too long for its tiny card and should overflow.</div>
+    <button></button>
+    <a href="#">Hash only</a>
+    <a href="javascript:void(0)">JavaScript link</a>
+    <div class="stack">
+      <button>Buy</button>
+      <a href="/checkout">Checkout</a>
+    </div>
+  </main>
+  <script>
+    console.error("demo console error");
+  </script>
+</body>
+</html>

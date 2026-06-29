@@ -1,0 +1,34 @@
+{
+  "name": "vibe-qa",
+  "version": "0.1.0",
+  "description": "A tiny pre-ship QA CLI for AI-generated web apps.",
+  "type": "module",
+  "bin": {
+    "vibe-qa": "./bin/vibe-qa.js"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "docs/openai-codex-oss-application.md",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "demo": "node ./bin/vibe-qa.js ./test/fixtures/broken-page.html --out ./tmp/demo-report --fail-on never",
+    "demo:bad-v0": "node ./bin/vibe-qa.js ./test/fixtures/bad-v0-ugly.html --out ./tmp/bad-v0-report --fail-on never",
+    "demo:clean": "node ./bin/vibe-qa.js ./test/fixtures/clean-page.html --out ./tmp/clean-report"
+  },
+  "keywords": [
+    "playwright",
+    "qa",
+    "vibe-coding",
+    "ai-generated-code",
+    "web-audit"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "playwright": "^1.57.0"
+  },
+  "devDependencies": {}
+}
