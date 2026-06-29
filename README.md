@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/Craybreeding/vibe-qa/actions/workflows/ci.yml/badge.svg)](https://github.com/Craybreeding/vibe-qa/actions/workflows/ci.yml)
 
-Tiny pre-ship QA for AI-generated web apps.
+Reviewer/tester gate for web apps built with coding agents.
 
 Run it before you post a Cursor, Claude Code, or Codex-built app to users:
 
@@ -11,19 +11,24 @@ npx vibe-qa http://localhost:3000
 ```
 
 It opens the page in desktop and mobile viewports, captures screenshots, checks
-for obvious launch blockers, and writes a shareable HTML report.
+whether the delivered app is usable, and writes a shareable HTML report.
 
 ## Product Shape
 
-`vibe-qa` is a focused release gate, not a generic test framework:
+`vibe-qa` is a focused release gate for coding-agent output, not a generic test
+framework:
 
 1. Point it at a local URL, public URL, or single HTML file.
 2. It opens the page like a user would on desktop and mobile.
 3. It records screenshots, runtime failures, layout issues, click-target issues,
    and placeholder links.
-4. It writes a human report for review and JSON for CI or agent workflows.
+4. It writes a human report for review and JSON for CI or another agent to read.
 5. It exits non-zero on errors by default, so a broken AI-generated page can
    block a publish step.
+
+In an agent team, `vibe-qa` is the reviewer/tester step after a builder says the
+web app is done. It does not prove every implementation detail. It checks the
+delivered surface for the simple failures that make a demo hard to trust.
 
 ## What It Checks
 
@@ -37,8 +42,9 @@ for obvious launch blockers, and writes a shareable HTML report.
 - Empty, hash-only, or JavaScript links
 - Optional same-origin broken-link checks
 
-This is not Lighthouse. It is a fast sanity pass for the messy problems people
-actually hit when shipping AI-generated interfaces.
+This is not Lighthouse, and it is not a unit-test runner. It is a fast acceptance
+pass for the messy problems people actually hit when shipping generated
+interfaces.
 
 ## Install
 
@@ -127,15 +133,18 @@ npm run demo:clean
 
 ## Why This Exists
 
-Vibe coding makes it easy to generate an app, but beginners often ship pages
-that only looked good in one browser size. `vibe-qa` gives them a small,
-repeatable release check without requiring a full QA setup.
+Coding agents can produce a working-looking app quickly, but the handoff often
+has no tester. A page may only work at one size, hide broken links, throw console
+errors, or contain controls that are hard to use.
+
+`vibe-qa` gives that handoff a small reviewer/tester gate. It checks the page a
+user would see and leaves a report that a human or another agent can inspect.
 
 ## Who It Is For
 
 - Indie hackers posting a new tool to Xiaohongshu, X, Product Hunt, or friends
 - Non-front-end builders using Cursor, Claude Code, Codex, Lovable, or Bolt
-- Small teams that want a quick smoke report before sending a demo link
+- Small teams that want a quick acceptance report before sending a demo link
 
 It is deliberately not a full testing platform. If your app needs auth flows,
 payments, analytics checks, or domain-specific data validation, keep those in

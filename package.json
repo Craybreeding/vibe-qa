@@ -1,7 +1,7 @@
 {
   "name": "vibe-qa",
   "version": "0.1.0",
-  "description": "A tiny pre-ship QA CLI for AI-generated web apps.",
+  "description": "Reviewer/tester gate for web apps built with coding agents.",
   "type": "module",
   "bin": {
     "vibe-qa": "./bin/vibe-qa.js"
@@ -24,7 +24,9 @@
     "qa",
     "vibe-coding",
     "ai-generated-code",
-    "web-audit"
+    "web-audit",
+    "agent-testing",
+    "acceptance-testing"
   ],
   "license": "MIT",
   "dependencies": {
