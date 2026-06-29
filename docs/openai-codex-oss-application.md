@@ -41,7 +41,7 @@ agent.
 
 ## Pre-Submission Checklist
 
-- [ ] Push a public repository.
-- [ ] Add at least one screenshot of synthetic `report.html` to the README.
+- [x] Push a public repository.
+- [x] Keep README/image examples free of private screenshots and paths.
 - [ ] Create a `v0.1.0` release.
 - [ ] Use the ChatGPT account email and OpenAI Organization ID in the form.

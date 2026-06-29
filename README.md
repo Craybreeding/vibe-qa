@@ -1,5 +1,7 @@
 # vibe-qa
 
+[![CI](https://github.com/Craybreeding/vibe-qa/actions/workflows/ci.yml/badge.svg)](https://github.com/Craybreeding/vibe-qa/actions/workflows/ci.yml)
+
 Tiny pre-ship QA for AI-generated web apps.
 
 Run it before you post a Cursor, Claude Code, or Codex-built app to users:
